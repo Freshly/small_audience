@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: little_clockwork_development
+
+test:
+  <<: *default
+  database: little_clockwork_test
+
+production:
+  <<: *default
+  database: little_clockwork_production
+  username: little_clockwork
+  password: <%= ENV['LITTLE_CLOCKWORK_DATABASE_PASSWORD'] %>
