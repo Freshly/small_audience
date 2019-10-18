@@ -11,8 +11,10 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'google-cloud-pubsub'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry-rails'
 end
 
