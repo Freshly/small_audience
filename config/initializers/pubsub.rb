@@ -1,3 +1,5 @@
 require "google/cloud/pubsub"
 
-PUBSUB = Google::Cloud::PubSub.new
+Google::Cloud::PubSub.new.subscription("proof-of-concept-sub").listen do |message|
+  ProcessPubsubMessageJob.perform_later(message)
+end
